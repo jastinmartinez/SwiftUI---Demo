@@ -12,10 +12,11 @@ struct ContentView: View {
     @State private var checkAmount:Double = 0.0
     @State private var amountOfPerson:Int = 2
     @State private var percenteOfTip:Int = 0
+    @FocusState private var isCheckAmountFocus:Bool
     
     private var totalPerPerson:Double {
-         
-       return  ( checkAmount + ( ( checkAmount / 100 ) * Double(percenteOfTip) ) ) / Double(amountOfPerson)
+        
+        return  ( checkAmount + ( ( checkAmount / 100 ) * Double(percenteOfTip) ) ) / Double(amountOfPerson)
         
     }
     
@@ -30,6 +31,7 @@ struct ContentView: View {
                 Section {
                     TextField("Chek Amount", value: $checkAmount, format: .currency(code: defaultCurrencyCode))
                         .keyboardType(.decimalPad)
+                        .focused($isCheckAmountFocus)
                 }header: {
                     Text("Check Amount")
                 }
@@ -71,7 +73,14 @@ struct ContentView: View {
                 
             }
             .navigationTitle("WeSplit")
-
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("Done") {
+                        isCheckAmountFocus = false
+                    }
+                }
+            }
         }
     }
 }
