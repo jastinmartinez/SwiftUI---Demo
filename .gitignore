@@ -90,3 +90,5 @@ fastlane/test_output
 iOSInjectionProject/
 
 GuessTheFlag/.DS_Store
+
+.DS_Store
