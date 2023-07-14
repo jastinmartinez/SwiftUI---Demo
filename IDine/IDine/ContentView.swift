@@ -9,13 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                let menuList = Bundle.main.decode([MenuSection].self, from: "menu.json")
+                ForEach(menuList) { menu in
+                    Section(menu.name) {
+                        ForEach(menu.items) { item in
+                            Text(item.name)
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Menu")
+            .listStyle(.grouped)
         }
-        .padding()
     }
 }
 

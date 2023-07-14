@@ -14,6 +14,10 @@
 		04D3BA732A60FBA400BE1D1E /* IDineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA722A60FBA400BE1D1E /* IDineTests.swift */; };
 		04D3BA7D2A60FBA400BE1D1E /* IDineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA7C2A60FBA400BE1D1E /* IDineUITests.swift */; };
 		04D3BA7F2A60FBA400BE1D1E /* IDineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA7E2A60FBA400BE1D1E /* IDineUITestsLaunchTests.swift */; };
+		04D3BA8E2A60FC2500BE1D1E /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 04D3BA8D2A60FC2500BE1D1E /* menu.json */; };
+		04D3BA912A60FC6800BE1D1E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA8F2A60FC6800BE1D1E /* Order.swift */; };
+		04D3BA922A60FC6800BE1D1E /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA902A60FC6800BE1D1E /* Menu.swift */; };
+		04D3BA942A60FE5100BE1D1E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA932A60FE5100BE1D1E /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		04D3BA782A60FBA400BE1D1E /* IDineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D3BA7C2A60FBA400BE1D1E /* IDineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDineUITests.swift; sourceTree = "<group>"; };
 		04D3BA7E2A60FBA400BE1D1E /* IDineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDineUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04D3BA8D2A60FC2500BE1D1E /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
+		04D3BA8F2A60FC6800BE1D1E /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		04D3BA902A60FC6800BE1D1E /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		04D3BA932A60FE5100BE1D1E /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,10 @@
 		04D3BA602A60FBA200BE1D1E /* IDine */ = {
 			isa = PBXGroup;
 			children = (
+				04D3BA8B2A60FC0900BE1D1E /* Data */,
+				04D3BA932A60FE5100BE1D1E /* Helper.swift */,
+				04D3BA902A60FC6800BE1D1E /* Menu.swift */,
+				04D3BA8F2A60FC6800BE1D1E /* Order.swift */,
 				04D3BA612A60FBA200BE1D1E /* IDineApp.swift */,
 				04D3BA632A60FBA200BE1D1E /* ContentView.swift */,
 				04D3BA652A60FBA400BE1D1E /* Assets.xcassets */,
@@ -125,6 +137,22 @@
 				04D3BA7E2A60FBA400BE1D1E /* IDineUITestsLaunchTests.swift */,
 			);
 			path = IDineUITests;
+			sourceTree = "<group>";
+		};
+		04D3BA8B2A60FC0900BE1D1E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				04D3BA8C2A60FC1B00BE1D1E /* source */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		04D3BA8C2A60FC1B00BE1D1E /* source */ = {
+			isa = PBXGroup;
+			children = (
+				04D3BA8D2A60FC2500BE1D1E /* menu.json */,
+			);
+			path = source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D3BA8E2A60FC2500BE1D1E /* menu.json in Resources */,
 				04D3BA692A60FBA400BE1D1E /* Preview Assets.xcassets in Resources */,
 				04D3BA662A60FBA400BE1D1E /* Assets.xcassets in Resources */,
 			);
@@ -257,7 +286,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D3BA912A60FC6800BE1D1E /* Order.swift in Sources */,
 				04D3BA642A60FBA200BE1D1E /* ContentView.swift in Sources */,
+				04D3BA942A60FE5100BE1D1E /* Helper.swift in Sources */,
+				04D3BA922A60FC6800BE1D1E /* Menu.swift in Sources */,
 				04D3BA622A60FBA200BE1D1E /* IDineApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
