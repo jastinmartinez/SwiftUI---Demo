@@ -41,7 +41,7 @@ final class BinaryToDecimalConvertor {
             .reversed()
             .enumerated()
             .reduce(into: Decimal()) { acc, value in
-                if value.element != 0 && value.offset != 0 {
+                if (.zero,.zero) != value {
                     acc += pow(Decimal(value.element * 2), value.offset)
                 }
             }
@@ -98,9 +98,13 @@ final class Bin2DecTests: XCTestCase {
         let result = BinaryToDecimalConvertor.convert(from: input)
         switch result {
         case .failure(let error):
-            XCTAssertEqual(error, expectedError, file: file, line: line)
+            XCTAssertEqual(error, expectedError,
+                           file: file,
+                           line: line)
         case .success:
-            XCTFail("expectec failure but instead got \(result)", file: file, line: line)
+            XCTFail("expectec failure but instead got \(result)",
+                    file: file,
+                    line: line)
         }
     }
 }
