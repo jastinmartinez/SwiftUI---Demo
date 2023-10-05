@@ -29,7 +29,6 @@ struct ItemDetail: View {
         .padding(5)
         .navigationTitle(item.name)
         .navigationBarTitleDisplayMode(.inline)
-        
     }
 }
 
