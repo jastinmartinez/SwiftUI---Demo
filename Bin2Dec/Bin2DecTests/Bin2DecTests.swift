@@ -11,6 +11,7 @@ import XCTest
 final class BinaryToDecimalConvertor {
     
     enum Error: Equatable, Swift.Error {
+        case empty
         case invalidInput(String)
         case maxInput
     }
@@ -21,13 +22,20 @@ final class BinaryToDecimalConvertor {
     }
     
     static func convert(from input: String) -> Result {
+        guard !input.isEmpty else {
+            return .failure(.empty)
+        }
+        
         guard input.count < 9 else {
             return .failure(.maxInput)
         }
+        
         let invalidInputs = input.filter({$0 != "0" && $0 != "1"})
+        
         guard invalidInputs.count == 0 else {
             return .failure(.invalidInput(invalidInputs))
         }
+        
         return .success
     }
 }
@@ -51,6 +59,17 @@ final class Bin2DecTests: XCTestCase {
         switch result {
         case .failure(let error):
             XCTAssertEqual(error, .invalidInput(invaludInput))
+        case .success:
+            XCTFail("expectec failure but instead got \(result)")
+        }
+    }
+    
+    func test_whenInputEmptyBinary_ShouldReturnError() {
+        let invaludInput = ""
+        let result = BinaryToDecimalConvertor.convert(from: invaludInput)
+        switch result {
+        case .failure(let error):
+            XCTAssertEqual(error, .empty)
         case .success:
             XCTFail("expectec failure but instead got \(result)")
         }
