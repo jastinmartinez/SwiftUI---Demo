@@ -17,7 +17,7 @@ final class BinaryToDecimalConvertor {
     }
     
     enum Result {
-        case success
+        case success(Decimal)
         case failure(Error)
     }
     
@@ -36,7 +36,17 @@ final class BinaryToDecimalConvertor {
             return .failure(.invalidInput(invalidInputs))
         }
         
-        return .success
+        let decimal = input
+            .compactMap({$0.wholeNumberValue})
+            .reversed()
+            .enumerated()
+            .reduce(into: Decimal()) { acc, value in
+                if value.element != 0 && value.offset != 0 {
+                    acc += pow(Decimal(value.element * 2), value.offset)
+                }
+            }
+        
+        return .success(decimal)
     }
 }
 
@@ -56,12 +66,35 @@ final class Bin2DecTests: XCTestCase {
         forErrorExpect(when: "", diplay: .empty)
     }
     
-//   MARK: Helpers
+    func test_whenValidBinaryInput_11001010_TransformToDecimal() {
+        let validInput = "11001010"
+        let expectedResult: Decimal = 202
+        let result = BinaryToDecimalConvertor.convert(from: validInput)
+        switch result {
+        case .success(let capturedResult):
+            XCTAssertEqual(capturedResult, expectedResult)
+        case .failure:
+            XCTFail("expectec success but instead got \(result)")
+        }
+    }
     
+    func test_whenValidBinaryInput_11101110_TransformToDecimal() {
+        let validInput = "11101110"
+        let expectedResult: Decimal = 238
+        let result = BinaryToDecimalConvertor.convert(from: validInput)
+        switch result {
+        case .success(let capturedResult):
+            XCTAssertEqual(capturedResult, expectedResult)
+        case .failure:
+            XCTFail("expectec success but instead got \(result)")
+        }
+    }
+    
+    //   MARK: Helpers
     private func forErrorExpect(when input: String,
-                        diplay expectedError: BinaryToDecimalConvertor.Error,
-                        file: StaticString = #filePath,
-                        line: UInt = #line) {
+                                diplay expectedError: BinaryToDecimalConvertor.Error,
+                                file: StaticString = #filePath,
+                                line: UInt = #line) {
         let result = BinaryToDecimalConvertor.convert(from: input)
         switch result {
         case .failure(let error):
