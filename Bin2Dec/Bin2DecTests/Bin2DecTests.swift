@@ -44,34 +44,30 @@ final class Bin2DecTests: XCTestCase {
     
     func test_binaryInputAllowMax8Digits() {
         let input = "000000000"
-        let result = BinaryToDecimalConvertor.convert(from: input)
-        switch result {
-        case .failure(let error):
-            XCTAssertEqual(error, .maxInput)
-        case .success:
-            XCTFail("expectec failure but instead got \(result)")
-        }
+        forErrorExpect(when: input, diplay: .maxInput)
     }
     
     func test_whenInputInvalidBinary_DeliversError() {
-        let invaludInput = "234ab"
-        let result = BinaryToDecimalConvertor.convert(from: invaludInput)
-        switch result {
-        case .failure(let error):
-            XCTAssertEqual(error, .invalidInput(invaludInput))
-        case .success:
-            XCTFail("expectec failure but instead got \(result)")
-        }
+        let invalid = "234ab"
+        forErrorExpect(when: invalid, diplay: .invalidInput(invalid))
     }
     
     func test_whenInputEmptyBinary_ShouldReturnError() {
-        let invaludInput = ""
-        let result = BinaryToDecimalConvertor.convert(from: invaludInput)
+        forErrorExpect(when: "", diplay: .empty)
+    }
+    
+//   MARK: Helpers
+    
+    private func forErrorExpect(when input: String,
+                        diplay expectedError: BinaryToDecimalConvertor.Error,
+                        file: StaticString = #filePath,
+                        line: UInt = #line) {
+        let result = BinaryToDecimalConvertor.convert(from: input)
         switch result {
         case .failure(let error):
-            XCTAssertEqual(error, .empty)
+            XCTAssertEqual(error, expectedError, file: file, line: line)
         case .success:
-            XCTFail("expectec failure but instead got \(result)")
+            XCTFail("expectec failure but instead got \(result)", file: file, line: line)
         }
     }
 }
