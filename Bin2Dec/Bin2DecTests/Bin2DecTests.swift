@@ -8,29 +8,51 @@
 import XCTest
 @testable import Bin2Dec
 
+final class BinaryToDecimalConvertor {
+    
+    enum Error: Equatable, Swift.Error {
+        case invalidInput(String)
+        case maxInput
+    }
+    
+    enum Result {
+        case success
+        case failure(Error)
+    }
+    
+    static func convert(from input: String) -> Result {
+        guard input.count < 9 else {
+            return .failure(.maxInput)
+        }
+        let invalidInputs = input.filter({$0 != "0" && $0 != "1"})
+        guard invalidInputs.count == 0 else {
+            return .failure(.invalidInput(invalidInputs))
+        }
+        return .success
+    }
+}
+
 final class Bin2DecTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_binaryInputAllowMax8Digits() {
+        let input = "000000000"
+        let result = BinaryToDecimalConvertor.convert(from: input)
+        switch result {
+        case .failure(let error):
+            XCTAssertEqual(error, .maxInput)
+        case .success:
+            XCTFail("expectec failure but instead got \(result)")
         }
     }
-
+    
+    func test_whenInputInvalidBinary_DeliversError() {
+        let invaludInput = "234ab"
+        let result = BinaryToDecimalConvertor.convert(from: invaludInput)
+        switch result {
+        case .failure(let error):
+            XCTAssertEqual(error, .invalidInput(invaludInput))
+        case .success:
+            XCTFail("expectec failure but instead got \(result)")
+        }
+    }
 }
