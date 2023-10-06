@@ -10,6 +10,7 @@
 		046F61722ACF63BA00A9B833 /* Bin2Dec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046F61692ACF63BA00A9B833 /* Bin2Dec.framework */; };
 		046F61772ACF63BA00A9B833 /* Bin2DecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F61762ACF63BA00A9B833 /* Bin2DecTests.swift */; };
 		046F61782ACF63BA00A9B833 /* Bin2Dec.h in Headers */ = {isa = PBXBuildFile; fileRef = 046F616C2ACF63BA00A9B833 /* Bin2Dec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		046F61832ACF88DB00A9B833 /* BinaryToDecimalConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F61822ACF88DB00A9B833 /* BinaryToDecimalConvertor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 		046F616C2ACF63BA00A9B833 /* Bin2Dec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bin2Dec.h; sourceTree = "<group>"; };
 		046F61712ACF63BA00A9B833 /* Bin2DecTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bin2DecTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		046F61762ACF63BA00A9B833 /* Bin2DecTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bin2DecTests.swift; sourceTree = "<group>"; };
+		046F61822ACF88DB00A9B833 /* BinaryToDecimalConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryToDecimalConvertor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		046F616B2ACF63BA00A9B833 /* Bin2Dec */ = {
 			isa = PBXGroup;
 			children = (
+				046F61812ACF88CB00A9B833 /* Convertor */,
 				046F616C2ACF63BA00A9B833 /* Bin2Dec.h */,
 			);
 			path = Bin2Dec;
@@ -80,6 +83,14 @@
 				046F61762ACF63BA00A9B833 /* Bin2DecTests.swift */,
 			);
 			path = Bin2DecTests;
+			sourceTree = "<group>";
+		};
+		046F61812ACF88CB00A9B833 /* Convertor */ = {
+			isa = PBXGroup;
+			children = (
+				046F61822ACF88DB00A9B833 /* BinaryToDecimalConvertor.swift */,
+			);
+			path = Convertor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 				TargetAttributes = {
 					046F61682ACF63BA00A9B833 = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
 					};
 					046F61702ACF63BA00A9B833 = {
 						CreatedOnToolsVersion = 15.0;
@@ -191,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046F61832ACF88DB00A9B833 /* BinaryToDecimalConvertor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +353,7 @@
 		046F617C2ACF63BA00A9B833 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -364,6 +378,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -371,6 +386,7 @@
 		046F617D2ACF63BA00A9B833 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -402,6 +418,7 @@
 		046F617F2ACF63BA00A9B833 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WQNY636DWS;
@@ -417,6 +434,7 @@
 		046F61802ACF63BA00A9B833 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WQNY636DWS;
