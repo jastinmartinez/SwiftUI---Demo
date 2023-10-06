@@ -67,21 +67,20 @@ final class Bin2DecTests: XCTestCase {
     }
     
     func test_whenValidBinaryInput_11001010_TransformToDecimal() {
-        let validInput = "11001010"
-        let expectedResult: Decimal = 202
-        let result = BinaryToDecimalConvertor.convert(from: validInput)
-        switch result {
-        case .success(let capturedResult):
-            XCTAssertEqual(capturedResult, expectedResult)
-        case .failure:
-            XCTFail("expectec success but instead got \(result)")
-        }
+        forSuccessExpect(when: "11001010", expectedResult: 202)
     }
     
     func test_whenValidBinaryInput_11101110_TransformToDecimal() {
-        let validInput = "11101110"
-        let expectedResult: Decimal = 238
-        let result = BinaryToDecimalConvertor.convert(from: validInput)
+        forSuccessExpect(when: "11101110", expectedResult: 238)
+    }
+    
+    //   MARK: Helpers
+    
+    private func forSuccessExpect(when input: String,
+                                  expectedResult: Decimal,
+                                  file: StaticString = #filePath,
+                                  line: UInt = #line) {
+        let result = BinaryToDecimalConvertor.convert(from: input)
         switch result {
         case .success(let capturedResult):
             XCTAssertEqual(capturedResult, expectedResult)
@@ -89,8 +88,6 @@ final class Bin2DecTests: XCTestCase {
             XCTFail("expectec success but instead got \(result)")
         }
     }
-    
-    //   MARK: Helpers
     private func forErrorExpect(when input: String,
                                 diplay expectedError: BinaryToDecimalConvertor.Error,
                                 file: StaticString = #filePath,
