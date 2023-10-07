@@ -18,6 +18,7 @@ public final class BinaryToDecimalConvertor {
     public enum Result {
         case success(Decimal)
         case failure(Error)
+        case none
     }
     
     public static func convert(from input: String) -> Result {
