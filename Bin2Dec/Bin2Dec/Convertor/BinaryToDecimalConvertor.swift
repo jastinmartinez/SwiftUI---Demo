@@ -7,20 +7,20 @@
 
 import Foundation
 
-final class BinaryToDecimalConvertor {
+public final class BinaryToDecimalConvertor {
     
-    enum Error: Equatable, Swift.Error {
+    public enum Error: Equatable, Swift.Error {
         case empty
         case invalidInput(String)
         case maxInput
     }
     
-    enum Result {
+    public enum Result {
         case success(Decimal)
         case failure(Error)
     }
     
-    static func convert(from input: String) -> Result {
+    public static func convert(from input: String) -> Result {
         guard !input.isEmpty else {
             return .failure(.empty)
         }
