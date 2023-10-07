@@ -12,7 +12,7 @@ struct Bin2DecLabelResultView: View {
     let color: Color
     var body: some View {
         Text(value)
-            .font(.title)
+            .font(.subheadline)
             .fontWeight(.semibold)
             .foregroundStyle(color)
     }
