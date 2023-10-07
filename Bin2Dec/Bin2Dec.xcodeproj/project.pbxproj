@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		046F61722ACF63BA00A9B833 /* Bin2Dec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046F61692ACF63BA00A9B833 /* Bin2Dec.framework */; };
 		046F61772ACF63BA00A9B833 /* Bin2DecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F61762ACF63BA00A9B833 /* Bin2DecTests.swift */; };
-		046F61782ACF63BA00A9B833 /* Bin2Dec.h in Headers */ = {isa = PBXBuildFile; fileRef = 046F616C2ACF63BA00A9B833 /* Bin2Dec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		046F61832ACF88DB00A9B833 /* BinaryToDecimalConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F61822ACF88DB00A9B833 /* BinaryToDecimalConvertor.swift */; };
 		04E5437C2AD1A7F400812573 /* Bin2DecUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5437B2AD1A7F400812573 /* Bin2DecUIApp.swift */; };
 		04E5437E2AD1A7F400812573 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5437D2AD1A7F400812573 /* ContentView.swift */; };
@@ -56,7 +55,6 @@
 
 /* Begin PBXFileReference section */
 		046F61692ACF63BA00A9B833 /* Bin2Dec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bin2Dec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		046F616C2ACF63BA00A9B833 /* Bin2Dec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bin2Dec.h; sourceTree = "<group>"; };
 		046F61712ACF63BA00A9B833 /* Bin2DecTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bin2DecTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		046F61762ACF63BA00A9B833 /* Bin2DecTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bin2DecTests.swift; sourceTree = "<group>"; };
 		046F61822ACF88DB00A9B833 /* BinaryToDecimalConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryToDecimalConvertor.swift; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				046F61812ACF88CB00A9B833 /* Convertor */,
-				046F616C2ACF63BA00A9B833 /* Bin2Dec.h */,
 			);
 			path = Bin2Dec;
 			sourceTree = "<group>";
@@ -189,7 +186,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				046F61782ACF63BA00A9B833 /* Bin2Dec.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
