@@ -9,8 +9,10 @@ import SwiftUI
 import Bin2Dec
 
 struct ContentView: View {
-    @State var binaryInput: String = ""
-    @State var binToDecResult: BinaryToDecimalConvertor.Result = .none
+    
+    @State private var binaryInput: String = ""
+    @State private var binToDecResult: BinaryToDecimalConvertor.Result = .none
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 15) {
