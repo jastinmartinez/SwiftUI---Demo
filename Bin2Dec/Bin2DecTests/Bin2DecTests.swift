@@ -16,8 +16,9 @@ final class Bin2DecTests: XCTestCase {
     }
     
     func test_whenInputInvalidBinary_DeliversError() {
-        let invalid = "234ab"
-        forErrorExpect(when: invalid, diplay: .invalidInput(invalid))
+        let invalid = "233"
+        let expected = String(Set(invalid).sorted())
+        forErrorExpect(when: invalid, diplay: .invalidInput(expected))
     }
     
     func test_whenInputEmptyBinary_ShouldReturnError() {
@@ -44,6 +45,8 @@ final class Bin2DecTests: XCTestCase {
             XCTAssertEqual(capturedResult, expectedResult)
         case .failure:
             XCTFail("expectec success but instead got \(result)")
+        case .none:
+            XCTFail("expectec success but instead got \(result)")
         }
     }
     private func forErrorExpect(when input: String,
@@ -53,13 +56,15 @@ final class Bin2DecTests: XCTestCase {
         let result = BinaryToDecimalConvertor.convert(from: input)
         switch result {
         case .failure(let error):
-            XCTAssertEqual(error, expectedError,
+            XCTAssertEqual(error.localizedDescription, expectedError.localizedDescription,
                            file: file,
                            line: line)
         case .success:
             XCTFail("expectec failure but instead got \(result)",
                     file: file,
                     line: line)
+        case .none:
+            XCTFail("expectec success but instead got \(result)")
         }
     }
 }
