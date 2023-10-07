@@ -9,10 +9,21 @@ import Foundation
 
 public final class BinaryToDecimalConvertor {
     
-    public enum Error: Equatable, Swift.Error {
+    public enum Error: LocalizedError, Swift.Error {
         case empty
         case invalidInput(String)
         case maxInput
+        
+        public var errorDescription: String? {
+            switch self {
+            case .empty:
+                return "Please enter a value"
+            case .invalidInput(let string):
+                return string + " are invalid values"
+            case .maxInput:
+                return "the maximun input is 8"
+            }
+        }
     }
     
     public enum Result {
@@ -30,10 +41,10 @@ public final class BinaryToDecimalConvertor {
             return .failure(.maxInput)
         }
         
-        let invalidInputs = input.filter({$0 != "0" && $0 != "1"})
+        let invalidInputs = Set(input.filter({$0 != "0" && $0 != "1"})).sorted()
         
         guard invalidInputs.count == 0 else {
-            return .failure(.invalidInput(invalidInputs))
+            return .failure(.invalidInput(String(invalidInputs)))
         }
         
         let decimal = input
