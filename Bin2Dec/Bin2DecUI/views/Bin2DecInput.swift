@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct Bin2DecInput: View {
     @Binding var binaryInput: String
@@ -21,6 +22,10 @@ struct Bin2DecInput: View {
             TextField("0101010", text: $binaryInput)
                 .font(.title2)
                 .fixedSize()
+                .keyboardType(.decimalPad)
+                .onReceive(Just(binaryInput), perform: { newValue in
+                    binaryInput = String(newValue.filter({$0.isNumber}).prefix(8))
+                })
         }
     }
 }
