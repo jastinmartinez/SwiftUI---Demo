@@ -11,6 +11,12 @@
 		046F61772ACF63BA00A9B833 /* Bin2DecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F61762ACF63BA00A9B833 /* Bin2DecTests.swift */; };
 		046F61782ACF63BA00A9B833 /* Bin2Dec.h in Headers */ = {isa = PBXBuildFile; fileRef = 046F616C2ACF63BA00A9B833 /* Bin2Dec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		046F61832ACF88DB00A9B833 /* BinaryToDecimalConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F61822ACF88DB00A9B833 /* BinaryToDecimalConvertor.swift */; };
+		04E5437C2AD1A7F400812573 /* Bin2DecUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5437B2AD1A7F400812573 /* Bin2DecUIApp.swift */; };
+		04E5437E2AD1A7F400812573 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5437D2AD1A7F400812573 /* ContentView.swift */; };
+		04E543802AD1A7F600812573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E5437F2AD1A7F600812573 /* Assets.xcassets */; };
+		04E543832AD1A7F600812573 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E543822AD1A7F600812573 /* Preview Assets.xcassets */; };
+		04E543882AD1A80300812573 /* Bin2Dec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046F61692ACF63BA00A9B833 /* Bin2Dec.framework */; };
+		04E543892AD1A80300812573 /* Bin2Dec.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 046F61692ACF63BA00A9B833 /* Bin2Dec.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,7 +27,28 @@
 			remoteGlobalIDString = 046F61682ACF63BA00A9B833;
 			remoteInfo = Bin2Dec;
 		};
+		04E5438A2AD1A80300812573 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 046F61602ACF63B900A9B833 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 046F61682ACF63BA00A9B833;
+			remoteInfo = Bin2Dec;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04E5438C2AD1A80300812573 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				04E543892AD1A80300812573 /* Bin2Dec.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		046F61692ACF63BA00A9B833 /* Bin2Dec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bin2Dec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +56,11 @@
 		046F61712ACF63BA00A9B833 /* Bin2DecTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bin2DecTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		046F61762ACF63BA00A9B833 /* Bin2DecTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bin2DecTests.swift; sourceTree = "<group>"; };
 		046F61822ACF88DB00A9B833 /* BinaryToDecimalConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryToDecimalConvertor.swift; sourceTree = "<group>"; };
+		04E543792AD1A7F400812573 /* Bin2DecUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bin2DecUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04E5437B2AD1A7F400812573 /* Bin2DecUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bin2DecUIApp.swift; sourceTree = "<group>"; };
+		04E5437D2AD1A7F400812573 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04E5437F2AD1A7F600812573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04E543822AD1A7F600812573 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +79,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04E543762AD1A7F400812573 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E543882AD1A80300812573 /* Bin2Dec.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,7 +95,9 @@
 			children = (
 				046F616B2ACF63BA00A9B833 /* Bin2Dec */,
 				046F61752ACF63BA00A9B833 /* Bin2DecTests */,
+				04E5437A2AD1A7F400812573 /* Bin2DecUI */,
 				046F616A2ACF63BA00A9B833 /* Products */,
+				04E543872AD1A80300812573 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +106,7 @@
 			children = (
 				046F61692ACF63BA00A9B833 /* Bin2Dec.framework */,
 				046F61712ACF63BA00A9B833 /* Bin2DecTests.xctest */,
+				04E543792AD1A7F400812573 /* Bin2DecUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,6 +134,32 @@
 				046F61822ACF88DB00A9B833 /* BinaryToDecimalConvertor.swift */,
 			);
 			path = Convertor;
+			sourceTree = "<group>";
+		};
+		04E5437A2AD1A7F400812573 /* Bin2DecUI */ = {
+			isa = PBXGroup;
+			children = (
+				04E5437B2AD1A7F400812573 /* Bin2DecUIApp.swift */,
+				04E5437D2AD1A7F400812573 /* ContentView.swift */,
+				04E5437F2AD1A7F600812573 /* Assets.xcassets */,
+				04E543812AD1A7F600812573 /* Preview Content */,
+			);
+			path = Bin2DecUI;
+			sourceTree = "<group>";
+		};
+		04E543812AD1A7F600812573 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				04E543822AD1A7F600812573 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		04E543872AD1A80300812573 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +212,25 @@
 			productReference = 046F61712ACF63BA00A9B833 /* Bin2DecTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		04E543782AD1A7F400812573 /* Bin2DecUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04E543862AD1A7F600812573 /* Build configuration list for PBXNativeTarget "Bin2DecUI" */;
+			buildPhases = (
+				04E543752AD1A7F400812573 /* Sources */,
+				04E543762AD1A7F400812573 /* Frameworks */,
+				04E543772AD1A7F400812573 /* Resources */,
+				04E5438C2AD1A80300812573 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04E5438B2AD1A80300812573 /* PBXTargetDependency */,
+			);
+			name = Bin2DecUI;
+			productName = Bin2DecUI;
+			productReference = 04E543792AD1A7F400812573 /* Bin2DecUI.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,6 +246,9 @@
 						LastSwiftMigration = 1500;
 					};
 					046F61702ACF63BA00A9B833 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					04E543782AD1A7F400812573 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
@@ -177,6 +268,7 @@
 			targets = (
 				046F61682ACF63BA00A9B833 /* Bin2Dec */,
 				046F61702ACF63BA00A9B833 /* Bin2DecTests */,
+				04E543782AD1A7F400812573 /* Bin2DecUI */,
 			);
 		};
 /* End PBXProject section */
@@ -193,6 +285,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04E543772AD1A7F400812573 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E543832AD1A7F600812573 /* Preview Assets.xcassets in Resources */,
+				04E543802AD1A7F600812573 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +316,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04E543752AD1A7F400812573 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E5437E2AD1A7F400812573 /* ContentView.swift in Sources */,
+				04E5437C2AD1A7F400812573 /* Bin2DecUIApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -222,6 +332,11 @@
 			isa = PBXTargetDependency;
 			target = 046F61682ACF63BA00A9B833 /* Bin2Dec */;
 			targetProxy = 046F61732ACF63BA00A9B833 /* PBXContainerItemProxy */;
+		};
+		04E5438B2AD1A80300812573 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 046F61682ACF63BA00A9B833 /* Bin2Dec */;
+			targetProxy = 04E5438A2AD1A80300812573 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -377,9 +492,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jastinmartinez.Bin2Dec;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -410,8 +528,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jastinmartinez.Bin2Dec;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -447,6 +568,69 @@
 			};
 			name = Release;
 		};
+		04E543842AD1A7F600812573 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Bin2DecUI/Preview Content\"";
+				DEVELOPMENT_TEAM = WQNY636DWS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jastinmartinez.Bin2DecUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04E543852AD1A7F600812573 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Bin2DecUI/Preview Content\"";
+				DEVELOPMENT_TEAM = WQNY636DWS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jastinmartinez.Bin2DecUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -473,6 +657,15 @@
 			buildConfigurations = (
 				046F617F2ACF63BA00A9B833 /* Debug */,
 				046F61802ACF63BA00A9B833 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04E543862AD1A7F600812573 /* Build configuration list for PBXNativeTarget "Bin2DecUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04E543842AD1A7F600812573 /* Debug */,
+				04E543852AD1A7F600812573 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
