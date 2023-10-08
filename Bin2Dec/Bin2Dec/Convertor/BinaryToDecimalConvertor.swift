@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class BinaryToDecimalConvertor {
+public enum BinaryToDecimalConvertor {
     
     public enum Error: LocalizedError, Swift.Error {
         case empty
