@@ -19,7 +19,7 @@ public enum BinaryToDecimalConvertor {
             case .empty:
                 return "Please enter a value"
             case .invalidInput(let string):
-                return string + " are invalid values"
+                return "invalid inputs: \(string.components(separatedBy: ","))"
             case .maxInput:
                 return "the maximun input is 8"
             }
