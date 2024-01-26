@@ -12,11 +12,11 @@ struct WeSplitView: View {
     @State private var numberOfPeople = 2
     @State private var tipPercentage = 20
     @FocusState private var isAmountFocused: Bool
-
+    
     private let tipPercentages = (0...25).filter({ $0 % 5 == 0 })
     private let currencyIdentifier = Locale.current.currency?.identifier ?? "USD"
     
-    private var totalPerPerson: Double {
+    var totalPerPerson: Double {
         let people = Double(numberOfPeople + 2)
         let tipSelection = Double(tipPercentage)
         let tipValue = checkAmount / 100 * tipSelection
@@ -33,7 +33,7 @@ struct WeSplitView: View {
                               format: .currency(code: currencyIdentifier))
                     .keyboardType(.decimalPad)
                     .focused($isAmountFocused)
-    
+                    
                     
                     Picker("Number of people", selection: $numberOfPeople) {
                         ForEach(2..<100) {
@@ -41,7 +41,7 @@ struct WeSplitView: View {
                         }
                     }
                     .pickerStyle(.navigationLink)
-
+                    
                 }
                 
                 Section("Tip") {
@@ -57,7 +57,7 @@ struct WeSplitView: View {
                     Text(totalPerPerson,
                          format: .currency(code: currencyIdentifier))
                 }
-    
+                
             }
             .navigationTitle("WeSplit")
             .toolbar {

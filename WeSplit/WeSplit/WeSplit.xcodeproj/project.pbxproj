@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		04D54A6D2B5EBB4D002E7D09 /* WeSplitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D54A6C2B5EBB4D002E7D09 /* WeSplitApp.swift */; };
-		04D54A6F2B5EBB4D002E7D09 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D54A6E2B5EBB4D002E7D09 /* ContentView.swift */; };
+		04D54A6F2B5EBB4D002E7D09 /* WeSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D54A6E2B5EBB4D002E7D09 /* WeSplitView.swift */; };
 		04D54A712B5EBB4F002E7D09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D54A702B5EBB4F002E7D09 /* Assets.xcassets */; };
 		04D54A742B5EBB4F002E7D09 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D54A732B5EBB4F002E7D09 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		049CF4932B6404DB00F6BE2E /* WeSplit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeSplit.entitlements; sourceTree = "<group>"; };
 		04D54A692B5EBB4D002E7D09 /* WeSplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeSplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D54A6C2B5EBB4D002E7D09 /* WeSplitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitApp.swift; sourceTree = "<group>"; };
-		04D54A6E2B5EBB4D002E7D09 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04D54A6E2B5EBB4D002E7D09 /* WeSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitView.swift; sourceTree = "<group>"; };
 		04D54A702B5EBB4F002E7D09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04D54A732B5EBB4F002E7D09 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,8 +52,9 @@
 		04D54A6B2B5EBB4D002E7D09 /* WeSplit */ = {
 			isa = PBXGroup;
 			children = (
+				049CF4932B6404DB00F6BE2E /* WeSplit.entitlements */,
 				04D54A6C2B5EBB4D002E7D09 /* WeSplitApp.swift */,
-				04D54A6E2B5EBB4D002E7D09 /* ContentView.swift */,
+				04D54A6E2B5EBB4D002E7D09 /* WeSplitView.swift */,
 				04D54A702B5EBB4F002E7D09 /* Assets.xcassets */,
 				04D54A722B5EBB4F002E7D09 /* Preview Content */,
 			);
@@ -137,7 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D54A6F2B5EBB4D002E7D09 /* ContentView.swift in Sources */,
+				04D54A6F2B5EBB4D002E7D09 /* WeSplitView.swift in Sources */,
 				04D54A6D2B5EBB4D002E7D09 /* WeSplitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +271,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WeSplit/WeSplit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeSplit/Preview Content\"";
@@ -287,6 +290,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jastinmartinez.WeSplit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -298,6 +303,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WeSplit/WeSplit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeSplit/Preview Content\"";
@@ -316,6 +322,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jastinmartinez.WeSplit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
