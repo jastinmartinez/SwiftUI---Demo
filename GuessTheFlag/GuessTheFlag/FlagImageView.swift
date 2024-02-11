@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct FlagImageView: View {
+    let number: Int
+    let flagTapped: (Int) -> Void
+    let countries: [String]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            flagTapped(number)
+        } label: {
+            Image(countries[number])
+        }.clipShape(.capsule)
+            .shadow(radius: 5)
     }
 }
-
 #Preview {
-    FlagImageView()
+    FlagImageView(number: 0, flagTapped: { _ in }, countries: [])
 }
