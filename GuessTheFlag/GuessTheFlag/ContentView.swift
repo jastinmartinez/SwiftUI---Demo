@@ -2,99 +2,97 @@
 //  ContentView.swift
 //  GuessTheFlag
 //
-//  Created by Jastin on 27/10/21.
+//  Created by Jastin on 30/1/24.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     
-    @State private var countries = ["Estonia","France","Germany","Ireland","Italy","Nigeria","Poland","Russia","Spain","UK","US"].shuffled()
-    
-    @State private var correctAnswer = Int.random(in: 0...2)
-    
-    @State private var isShowingAlertScore = false
-    
-    @State private var titleScore = ""
-    
-    @State private var score = 0
+    @State private var countries = ["Estonia",
+                                    "France",
+                                    "Germany",
+                                    "Ireland",
+                                    "Italy",
+                                    "Nigeria",
+                                    "Poland",
+                                    "Spain",
+                                    "UK",
+                                    "Ukraine",
+                                    "US"].shuffled()
+    @State private var correctAnswer = Int.random(in: 0..<3)
+    @State private var isShowingScore = false
+    @State private var scoreTitle = ""
     
     var body: some View {
-        
         ZStack {
-            Spacer()
-            RadialGradient(stops:[.init(color: Color(red: 0.76, green: 0.15, blue: 0.26), location: 0.3),.init(color: Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.3)], center: .top, startRadius: 150, endRadius: 700)
-                .ignoresSafeArea()
+            RadialGradient(stops: [.init(color:  Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.3),
+                                   .init(color: Color(red: 0.76, green: 0.15, blue: 0.26), location: 0.3)],
+                           center: .top,
+                           startRadius: 200,
+                           endRadius: 700)
+            .ignoresSafeArea()
             
             VStack {
-                Text("Guess the flag")
-                    .foregroundColor(.white)
-                    .font(.largeTitle.weight(.bold))
                 
+                Spacer()
+                
+                Text("Guess the flag")
+                    .font(.largeTitle.weight(.bold))
+                    .foregroundStyle(.white)
                 VStack(spacing: 15) {
                     VStack {
                         Text("Tap the flag of")
+                            .foregroundStyle(.secondary)
                             .font(.subheadline.weight(.heavy))
-                            .foregroundColor(.secondary)
+                        
                         Text(countries[correctAnswer])
                             .font(.largeTitle.weight(.semibold))
                     }
-                    
                     ForEach(0..<3) { number in
                         Button {
-                            tappedFlag(number)
-                        }label: {
+                            flagTapped(number)
+                        } label: {
                             Image(countries[number])
-                                .renderingMode(.original)
-                                .clipShape(Capsule())
-                                .shadow( radius: 5)
-                        }
+                        }.clipShape(.capsule)
+                            .shadow(radius: 5)
                     }
                 }
                 .frame(maxWidth: .infinity)
-                .padding(.vertical,20)
+                .padding(.vertical, 20)
                 .background(.regularMaterial)
+                .clipShape(.rect(cornerRadius: 20))
                 
                 Spacer()
                 Spacer()
                 
-                Text("Score: \(score)")
-                    .foregroundColor(.white)
-                    .font(.largeTitle.weight(.bold))
+                Text("Score ???")
+                    .foregroundStyle(.white)
+                    .font(.title.bold())
                 
                 Spacer()
             }
             .padding()
+            
         }
-        .alert(titleScore, isPresented: $isShowingAlertScore) {
-            
-            Button("Continue",action: askeNextQuestion)
-            
+        .alert(scoreTitle, isPresented: $isShowingScore) {
+            Button("continue", action: askQuestion)
+        } message: {
+            Text("Your score is ???")
         }
     }
     
-    func tappedFlag(_ number: Int) {
-        
-        if number == correctAnswer {
-            titleScore = "Correct 🤣"
-            score += 1
-        }
-        else {
-            titleScore = "Wrong 😪"
-        }
-        
-        isShowingAlertScore = true
+    func flagTapped(_ number: Int) {
+        scoreTitle = number == correctAnswer ? "Correct" : "Wrong"
+        isShowingScore = true
     }
     
-    func askeNextQuestion() {
-        
+    func askQuestion() {
         countries.shuffle()
-        correctAnswer = Int.random(in: 0...2)
+        correctAnswer = Int.random(in: 0..<3)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

@@ -56,6 +56,7 @@ struct WeSplitView: View {
                 Section("Total") {
                     Text(totalPerPerson,
                          format: .currency(code: currencyIdentifier))
+                    .foregroundStyle(tipPercentage == 0 ? .red : .black)
                 }
                 
             }
