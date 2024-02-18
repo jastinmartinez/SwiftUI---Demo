@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "04227D30-E8AC-4AD8-9DC1-30190714B143",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:RockPaperScissors.xcodeproj",
+      "identifier" : "0414B28D2B82BA2B00426149",
+      "name" : "RockPaperScissors"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:RockPaperScissors.xcodeproj",
+        "identifier" : "0414B2A22B82BBBC00426149",
+        "name" : "RockPaperScissorsTests"
+      }
+    }
+  ],
+  "version" : 1
+}
