@@ -7,10 +7,10 @@
 
 import Foundation
 
-class Score {
+class Score: ObservableObject {
     
     private(set) var points: Int
-    private(set) var rounds: Int
+    @Published  private(set) var rounds: Int
     
     init(points: Int, rounds: Int) {
         self.points = points
@@ -23,26 +23,27 @@ class Score {
     }
     
     func remove() {
+        next()
         guard points > 0 else {
             return
         }
         self.points -= 1
-        next()
     }
     
-    private func next() {
-        guard rounds > 0 else {
+    func next() {
+        guard rounds < 10 else {
+            reset()
             return
         }
-        rounds -= 1
+        rounds += 1
     }
     
     func reset() {
         self.points = .zero
-        self.rounds = 10
+        self.rounds = 1
     }
     
     static func make() -> Score {
-        return Score(points: .zero, rounds: 10)
+        return Score(points: .zero, rounds: 1)
     }
 }

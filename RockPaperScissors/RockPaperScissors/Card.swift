@@ -25,17 +25,6 @@ extension Card {
         }
     }
     
-    var icon: String {
-        switch self {
-        case .rock:
-            return "rock"
-        case .paper:
-            return "paper"
-        case .scissors:
-            return "scissors"
-        }
-    }
-    
     static func list() -> [Card] {
         return Card.allCases.shuffled()
     }
