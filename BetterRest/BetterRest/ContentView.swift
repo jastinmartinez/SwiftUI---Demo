@@ -10,31 +10,50 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var wakeUp = Date.now
+    @State private var wakeUp = defaultWakeUpTime
     @State private var sleepAmount  = 8.0
     @State private var coffeeAmount = 1
     @State private var messageResultAlert = (title: "",message: "", isPresented: false)
     
+    private static var defaultWakeUpTime: Date {
+        var components = DateComponents()
+        components.hour = 7
+        components.minute = 0
+        return Calendar.current.date(from: components) ?? .now
+    }
+    
     var body: some View {
         NavigationStack {
-            VStack {
-                Text("When do you want to wake up?")
-                    .font(.headline)
+            Form {
                 
-                DatePicker("Please enter a time",
-                           selection: $wakeUp,
-                           displayedComponents: .hourAndMinute)
+                VStack(alignment: .leading,spacing: 0, content:  {
+                    Text("When do you want to wake up?")
+                        .font(.headline)
+                    DatePicker("Please enter a time",
+                               selection: $wakeUp,
+                               displayedComponents: .hourAndMinute)
                     .labelsHidden()
+                })
                 
-                Text("Desired amount of sleep")
-                    .font(.headline)
+               
+                VStack(alignment: .leading,spacing: 0, content:  {
+                    Text("Desired amount of sleep")
+                        .font(.headline)
+                    
+                    Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
+                })
                 
-                Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
+                VStack(alignment: .leading,spacing: 0, content:  {
+                    Text("Daily coffee intake")
+                        .font(.headline)
+                    
+                    Picker("^[\(coffeeAmount) cup](inflect: true)", selection: $coffeeAmount) {
+                        ForEach(coffeeAmount..<21, id: \.self) { coffee in
+                            Text(coffee, format: .number)
+                        }
+                    }
+                })
                 
-                Text("Daily coffee intake")
-                    .font(.headline)
-                
-                Stepper("\(coffeeAmount.formatted()) cups(s)", value: $coffeeAmount, in: 1...20)
             }
             .navigationTitle("BetterRest")
             .toolbar {
