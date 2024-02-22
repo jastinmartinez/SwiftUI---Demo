@@ -83,12 +83,12 @@
 		0414B2902B82BA2B00426149 /* RockPaperScissors */ = {
 			isa = PBXGroup;
 			children = (
+				0414B2912B82BA2B00426149 /* RockPaperScissorsApp.swift */,
+				0414B2932B82BA2B00426149 /* ContentView.swift */,
 				04F2F7892B830E3B00DF70FB /* Score.swift */,
 				04F2F78B2B830E4C00DF70FB /* GameResult.swift */,
 				04F2F78D2B830E5C00DF70FB /* Card.swift */,
 				04F2F7872B830E0E00DF70FB /* Game.swift */,
-				0414B2912B82BA2B00426149 /* RockPaperScissorsApp.swift */,
-				0414B2932B82BA2B00426149 /* ContentView.swift */,
 				0414B2952B82BA2F00426149 /* Assets.xcassets */,
 				0414B2972B82BA2F00426149 /* Preview Content */,
 			);
