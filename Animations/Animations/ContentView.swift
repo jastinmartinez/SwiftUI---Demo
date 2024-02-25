@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var scaleEffectValue = 1.0
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+//        Implicit animation
+        Button("Tap Me") {
+            scaleEffectValue += 1
         }
-        .padding()
+        .padding(50)
+        .background(.red)
+        .foregroundColor(.white)
+        .clipShape(.circle)
+        .scaleEffect(scaleEffectValue)
+        .animation(.default, value: scaleEffectValue)
+        .blur(radius: (scaleEffectValue - 1) * 2)
+        
     }
 }
 
