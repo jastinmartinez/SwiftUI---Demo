@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct AnimationTransition: View {
+    
+    @State private var isRectangleShowing = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button("Show Rectangle") {
+                withAnimation {
+                    isRectangleShowing.toggle()
+                }
+            }
+            
+            if isRectangleShowing {
+                Rectangle()
+                    .frame(width: 300, height: 200)
+                    .foregroundColor(.red)
+                    .rotationEffect(.degrees(isRectangleShowing ? 5 : 0))
+                    .transition(.asymmetric(insertion: .slide, removal: .opacity))
+            }
+        }
     }
 }
 
