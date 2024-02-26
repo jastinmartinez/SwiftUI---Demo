@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04CE51842B8CFEAA00551105 /* AnimatingGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE51832B8CFEAA00551105 /* AnimatingGesture.swift */; };
 		04CE51862B8D05B500551105 /* AnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE51852B8D05B500551105 /* AnimationTransition.swift */; };
+		04CE51882B8D08C300551105 /* CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE51872B8D08C300551105 /* CustomTransition.swift */; };
 		04EC9ADE2B8BF2CB00E9AC68 /* AnimationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC9ADD2B8BF2CB00E9AC68 /* AnimationsApp.swift */; };
 		04EC9AE02B8BF2CB00E9AC68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC9ADF2B8BF2CB00E9AC68 /* ContentView.swift */; };
 		04EC9AE22B8BF2CE00E9AC68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EC9AE12B8BF2CE00E9AC68 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		04CE51832B8CFEAA00551105 /* AnimatingGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingGesture.swift; sourceTree = "<group>"; };
 		04CE51852B8D05B500551105 /* AnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTransition.swift; sourceTree = "<group>"; };
+		04CE51872B8D08C300551105 /* CustomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransition.swift; sourceTree = "<group>"; };
 		04EC9ADA2B8BF2CB00E9AC68 /* Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EC9ADD2B8BF2CB00E9AC68 /* AnimationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsApp.swift; sourceTree = "<group>"; };
 		04EC9ADF2B8BF2CB00E9AC68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				04EC9AE12B8BF2CE00E9AC68 /* Assets.xcassets */,
 				04EC9AE32B8BF2CE00E9AC68 /* Preview Content */,
 				04CE51852B8D05B500551105 /* AnimationTransition.swift */,
+				04CE51872B8D08C300551105 /* CustomTransition.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			files = (
 				04EC9AE02B8BF2CB00E9AC68 /* ContentView.swift in Sources */,
 				04CE51842B8CFEAA00551105 /* AnimatingGesture.swift in Sources */,
+				04CE51882B8D08C300551105 /* CustomTransition.swift in Sources */,
 				04EC9ADE2B8BF2CB00E9AC68 /* AnimationsApp.swift in Sources */,
 				04CE51862B8D05B500551105 /* AnimationTransition.swift in Sources */,
 			);
